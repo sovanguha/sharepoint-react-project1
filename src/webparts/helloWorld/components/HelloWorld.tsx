@@ -19,8 +19,8 @@ import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
 export default class HelloWorld extends React.Component<IHelloWorldProps, IReactSpFxPnP> {
 
-  constructor() {
-    super();
+  constructor(prop: IHelloWorldProps) {
+    super(prop);
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDesc = this.handleDesc.bind(this);
     this._onCheckboxChange = this._onCheckboxChange.bind(this);
@@ -31,12 +31,13 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IReact
 
     this.state = {
       name: "",
+      userIDs: [],
       description: "",
       selectedItems: [],
       hideDialog: true,
       showPanel: false,
-      dpselectedItem: undefined,
-      dpselectedItems: [],
+      // dpselectedItem: undefined,
+       dpselectedItems: [],
       disableToggle: false,
       defaultChecked: false,
       termKey: undefined,
@@ -54,7 +55,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IReact
   public render(): React.ReactElement<IHelloWorldProps> {
     return (
       <form>
-      <div className={styles.helloWorld}>
+      <div className={styles.reactSpFxPnP}>
       <div className={styles.container}>
       <div className={`ms-Grid-row ms-bgColor-neutralLight ms-fontColor-white ${styles.row}`}>
         <div className="ms-Grid-col ms-u-sm4 block">
@@ -93,7 +94,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IReact
               placeHolder="Select an Option"
               label=""
               id="component"
-              selectedKey={dpselectedItem ? dpselectedItem.key : undefined}
+              //selectedKey={dpselectedItem ? dpselectedItem.key : undefined}
               ariaLabel="Basic dropdown example"
               options={[
                 { key: 'Human Resource', text: 'Human Resource' },
@@ -136,7 +137,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IReact
             disabled={false}
             onChange={this._getManager}
             errorMessage={(this.state.userManagerIDs.length === 0 && this.state.onSubmission === true) ? this.state.required : " "}
-            errorMessageclassName={styles.hideElementManager}
+            // errorMessageclassName={styles.hideElementManager}
             />
         </div>
          <div className="ms-Grid-col ms-u-sm1 block">
