@@ -48,7 +48,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IReact
       required: "This is required",
       onSubmission: false,
       termnCond: false,
-    }
+    };
   }
 
 
